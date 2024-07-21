@@ -1,7 +1,8 @@
 export const navItems = [
   { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
+  { name: "Coures", link: "#courses" },
   { name: "Testimonials", link: "#testimonials" },
+  { name: "Tution", link: "#tution" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -188,37 +189,40 @@ export const companies = [
   },
 ];
 
-export const workExperience = [
+export const tuitionClasses = [
   {
     id: 1,
-    title: "Introduction to Programming",
-    desc: "A beginner-friendly course covering the basics of programming logic and syntax.",
+    title: "BE Information Technology",
+    desc: "Comprehensive tuition for Bachelor of Engineering in Information Technology.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
+    duration: "4 years",
   },
   {
     id: 2,
-    title: "Web Development Fundamentals",
-    desc: "Learn HTML, CSS, and JavaScript to build interactive and responsive websites.",
+    title: "BE Computer Science",
+    desc: "In-depth classes for Bachelor of Engineering in Computer Science.",
     className: "md:col-span-2",
     thumbnail: "/exp2.svg",
+    duration: "4 years",
   },
   {
     id: 3,
-    title: "Mobile App Development",
-    desc: "Create apps for iOS and Android using React Native and other modern frameworks.",
+    title: "Diploma in Information Technology",
+    desc: "Practical-oriented tuition for Diploma in IT, covering essential tech skills.",
     className: "md:col-span-2",
     thumbnail: "/exp3.svg",
+    duration: "3 years",
   },
   {
     id: 4,
-    title: "Advanced IT Skills",
-    desc: "Cover topics like networking, cybersecurity, and cloud computing for IT professionals.",
+    title: "MCA (Master of Computer Applications)",
+    desc: "Advanced classes for MCA students, focusing on software development.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
+    duration: "2 years",
   },
 ];
-
 export const socialMedia = [
   {
     id: 1,

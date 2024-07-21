@@ -41,7 +41,8 @@ const Hero = () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-xl xl:text-2xl">
-            Welcome to The Learning Hub! We offer expert-led programming and IT tuition classes.
+            Welcome to The Learning Hub! We offer expert-led programming and IT
+            tuition classes.
           </p>
 
           <a href="#courses">
