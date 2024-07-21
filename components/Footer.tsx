@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import { FaLocationArrow, FaEnvelope, FaPhone } from "react-icons/fa";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
@@ -11,6 +12,8 @@ const Footer = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,10 +21,33 @@ const Footer = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitMessage("");
+
+    try {
+      // Replace these with your actual EmailJS service ID, template ID, and user ID
+      const result = await emailjs.send(
+        "service_145cgf7",
+        "template_q925vbs",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "oVQLVBAMUUaIaVhsC"
+      );
+
+      console.log(result);
+      setSubmitMessage("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setSubmitMessage("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -93,11 +119,21 @@ const Footer = () => {
               required
             ></motion.textarea>
             <MagicButton
-              title="Send Message"
+              title={isSubmitting ? "Sending..." : "Send Message"}
               icon={<FaLocationArrow />}
               position="right"
-              handleClick={() => {}} // Add an empty function or the actual submit logic
+              handleClick={() => {}}
+              otherClasses={isSubmitting ? "opacity-50 cursor-not-allowed" : ""}
             />
+            {submitMessage && (
+              <p
+                className={`text-${
+                  submitMessage.includes("success") ? "green" : "red"
+                }-500 mt-2`}
+              >
+                {submitMessage}
+              </p>
+            )}
           </form>
         </div>
 
