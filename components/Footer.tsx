@@ -70,7 +70,7 @@ const Footer = () => {
           <div>
             <p className="text-white-200 mb-6">
               Have questions about our courses or ready to start your learning
-              journey? We're here to help!
+              journey? We&apos;re here to help!
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
