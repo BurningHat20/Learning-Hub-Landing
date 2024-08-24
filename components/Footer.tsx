@@ -75,16 +75,16 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <FaEnvelope className="text-purple mr-3" />
-                <p>info@thelearninghub.com</p>
+                <p>learninghubbhavnagar@gmail.com</p>
               </div>
               <div className="flex items-center">
                 <FaPhone className="text-purple mr-3" />
-                <p>+1 (123) 456-7890</p>
+                <p>+91 7016559793</p>
               </div>
-              <div className="flex items-center">
+              {/* <div className="flex items-center">
                 <FaLocationArrow className="text-purple mr-3" />
                 <p>123 Education Street, Learning City, 12345</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
